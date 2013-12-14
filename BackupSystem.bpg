@@ -1,0 +1,36 @@
+#------------------------------------------------------------------------------
+VERSION = BWS.01
+#------------------------------------------------------------------------------
+!ifndef ROOT
+ROOT = $(MAKEDIR)\..
+!endif
+#------------------------------------------------------------------------------
+MAKE = $(ROOT)\bin\make.exe -$(MAKEFLAGS) -f$**
+DCC = $(ROOT)\bin\dcc32.exe $**
+BRCC = $(ROOT)\bin\brcc32.exe $**
+#------------------------------------------------------------------------------
+PROJECTS = FtpSync.exe TouchFolders.exe UnrarDiz.exe StuffZipper.exe \
+  FolderSync.exe CleanHistory.exe
+#------------------------------------------------------------------------------
+default: $(PROJECTS)
+#------------------------------------------------------------------------------
+
+FtpSync.exe: FtpSync\FtpSync.dpr
+  $(DCC)
+
+TouchFolders.exe: TouchFolders\TouchFolders.dpr
+  $(DCC)
+
+UnrarDiz.exe: UnrarDiz\UnrarDiz.dpr
+  $(DCC)
+
+StuffZipper.exe: StuffZipper\StuffZipper.dpr
+  $(DCC)
+
+FolderSync.exe: FolderSync\FolderSync.dpr
+  $(DCC)
+
+CleanHistory.exe: CleanHistory\CleanHistory.dpr
+  $(DCC)
+
+
